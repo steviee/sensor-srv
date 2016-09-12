@@ -1,0 +1,16 @@
+default: &default
+  endpoint: 'https://acme-v01.api.letsencrypt.org/'  # test server
+  email: 'steviee77@gmail.com'
+  domain: 'sensor.deltacity.org'
+  private_key: 'key/keyfile.pem'                   # in Rails.root
+  output_cert_dir: 'certificates'                       # in Rails.root
+  challenge_dir_name: 'challenge'
+
+production:
+  <<: *default
+
+development:
+  <<: *default
+
+test:
+  <<: *default

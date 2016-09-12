@@ -16,7 +16,7 @@ NoBrainer.configure do |config|
   # * RETHINKDB_URL, RDB_URL
   # * RETHINKDB_HOST, RETHINKDB_PORT, RETHINKDB_DB, RETHINKDB_AUTH
   # * RDB_HOST, RDB_PORT, RDB_DB, RDB_AUTH
-  config.rethinkdb_urls = ["rethinkdb://rdb.deltacity.org:28015/sensor"]
+  # config.rethinkdb_urls = [""]
 
   # ssl_options may be set to {:ca_certs => '/path/to/ca.crt'} to establish
   # an SSL connection to the RethinkDB servers.

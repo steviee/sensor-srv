@@ -61,15 +61,31 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    acme-client (0.3.7)
+      faraday (~> 0.9, >= 0.9.1)
+      json-jwt (~> 1.2, >= 1.2.3)
     arel (7.1.1)
+    bindata (2.3.3)
     builder (3.2.2)
     byebug (9.0.5)
+    coderay (1.1.1)
     concurrent-ruby (1.0.2)
     erubis (2.7.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    json-jwt (1.6.5)
+      activesupport
+      bindata
+      multi_json (>= 1.3)
+      securecompare
+      url_safe_base64
+    letsencrypt_plugin (0.0.9)
+      acme-client (~> 0.3.0)
+      rails (>= 4.2, < 5.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -84,6 +100,8 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    multi_json (1.12.1)
+    multipart-post (2.0.0)
     nio4r (1.2.1)
     nobrainer (0.32.0)
       activemodel (>= 4.1.0)
@@ -95,6 +113,10 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (3.6.0)
     rack (2.0.1)
     rack-cors (0.4.0)
@@ -110,6 +132,8 @@ GEM
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     rethinkdb (2.3.0.2)
+    securecompare (1.0.0)
+    slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -127,6 +151,7 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    url_safe_base64 (0.2.2)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -136,8 +161,10 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  letsencrypt_plugin
   listen (~> 3.0.5)
   nobrainer
+  pry
   puma (~> 3.0)
   rack-cors
   rails!
